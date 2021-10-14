@@ -1,0 +1,23 @@
+{% extends 'project/base.html' %} {% load static %} {% block title %}
+<title>Premium Services</title>
+{% endblock title%}
+<!--  -->
+{% block content %}
+
+<div
+  class="no-results-div"
+  style="
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  "
+>
+  <h2>Sorry This Service is Under Construction</h2>
+  <h3>Kindly have a look later</h3>
+  <br />
+  <h4>Back to <a class="" href="{% url 'home' %}">Home</a>..??</h4>
+</div>
+
+{% endblock content %}

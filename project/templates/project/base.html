@@ -1,0 +1,241 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'project/css/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'project/css/base.css' %}">
+
+    <script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css"
+/>
+
+<!-- animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    {% block head-block %}
+    <!-- this is the head block for importing the further stuff -->
+    {% endblock%}
+
+    {% block title %}
+    <title>YesBroker!</title>
+    {% endblock %}
+
+
+  </head>
+  <body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top" style="  
+      position: fixed;
+    width: 100%;
+         z-index: 100;
+              top: 0;
+    left: 0;
+    right: 0;"
+    
+    >
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top"> -->
+
+      <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+        <a class="navbar-brand" href="https://yesbroker.in/">
+    <img src="{% static 'project/images/logo.jpeg' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
+            YesBroker
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <spam class="nav-item active">
+                    <a class="nav-link" href="{% url 'project-filters' %}">Properties<span class="sr-only">(current)</span></a>
+                </spam>
+                <spam class="nav-item">
+                    <a class="nav-link" href="{% url 'premium-services' %}">Developer</a>
+                </spam>
+                <spam class="nav-item">
+                    <a class="nav-link" href="{% url 'premium-services' %}">Premium Services</a>
+                </spam>
+                <!-- <spam class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Societies
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </spam>
+                <spam class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </spam> -->
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="search(this.value)" />
+                <button class="btn-boot btn-outline-success my-2 my-sm-0" type="submit">
+                    Search
+                </button> -->
+    
+    
+            </form>
+            <!-- <div id="search-input">
+                <li><input type="text" name="search" placeholder="Search..." onkeyup="search(this.value)" class="search-input form-control mr-sm-2" type="search"></li>
+                <span style="z-index:10;">
+                    <li id="test" class="show-search-results"></li><span>
+            </div>
+     -->
+
+     <div id="autocomplete" class="autocomplete">
+      <input class="autocomplete-input" />
+      <ul class="autocomplete-result-list"  style="left: 0px;"></ul>
+    </div>
+
+
+        </div>
+    </nav>
+    <div class="empty-nav-bar-div">
+       .
+    </div>
+    <!-- messages -->
+
+    {% if messages %}
+
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+    
+    <script>
+
+        new Autocomplete('#autocomplete',{
+
+          search : input => {
+            console.log(input)
+            const url = `/project/search/?address=${input}`
+            // const url = `/property/${input}`
+            return new Promise(resolve => {
+              fetch(url)
+              .then(response => response.json())
+              .then(data => {
+                console.log(data)
+                resolve(data.data)
+              })
+            })
+          },
+
+            onSubmit : result => {
+              // window.open(`/places/?search=${result}`)
+              window.open(`/property/${result}`)
+            }
+
+        })
+
+      </script>
+
+
+
+
+
+
+
+    {% block content %}
+
+    <!-- this Will get replaced with all the content -->
+
+    {% endblock %}
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+      <div class="footer-section section-one">
+    
+        <div class="footer-links-div">
+          <spam class="footer-links-title">Quick Links</spam>
+          <ul class="footer-link-list">
+            <li class="footer-links"> <a href="https://yesbroker.in/">Home</a></li>
+            <li class="footer-links"> <a href="{% url 'project-filters' %}">Properties</a></li>
+            <li class="footer-links"> <a href="{% url 'premium-services' %}">Developers</a></li>
+            <li class="footer-links"> <a href="{% url 'premium-services' %}">Premium Services</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-website-data">
+    
+          <div class="footer-website-data-title">
+            <a href="https://www.yesbroker.in">YesBroker.in</a>
+    
+          </div>
+    
+          <div class="footer-website-data-desc">
+            YesBroker.in at your service
+          </div>
+    
+        </div>
+    
+      </div>
+      <center>
+        <div class="footer-section section-two">
+    
+          © 2020 Copyright:
+          <a class="text-dark" href="https://YesBroker.in/">YesBroker.in</a>
+    
+        </div>
+    
+      </center>
+    
+    
+    
+    
+    
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  </body>
+</html>

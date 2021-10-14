@@ -1,0 +1,105 @@
+{% extends 'project/base.html' %} {% load static %} {% block title %}
+<title>YesBroker!</title>
+{% endblock %}
+<!-- 
+    <script>
+      const rdata = "{{projects}}";
+  console.log(rdata);
+  const input = document.getElementById("search_here");
+  console.log(input);
+  let filteredArr = [];
+  input.addEventListener("keyup", (e) => {
+    box.innerHTML = "";
+    filteredArr = rdata.filter((info) =>
+    info.category.includes(e.target.value)
+    );
+    console.log(filteredArr);
+    if (filteredArr.length > 0) {
+      filteredArr.map((info) => {
+        box.innerHTML += `<b>${info["name"]}</b><br>`;
+      });
+    } else {
+      box.innerHTML = "<b> No result Found</b>";
+    }
+  });
+</script> -->
+
+{% block head-block %}
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'project/css/main.css' %}"
+/> -->
+<!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'project/css/index.css' %}"
+/>
+
+{% endblock head-block %}
+
+<!--  -->
+
+{% block content %}
+<!-- Content of the property detail page -->
+
+<body>
+  <div class="top-banner" style="">
+    <div style="display: block">
+      <div class="left-tagline">
+        <li>Fast and Reliable, Our service for you</li>
+      </div>
+    </div>
+    <div class="right-description">
+      <li>One Stop for all your Real Estate needs</li>
+    </div>
+  </div>
+  <center>
+    <div class="top-features">
+      <li class="essentials">
+        <span class="heading">30+ M</span><br /><span>Happy Users</span>
+      </li>
+      <li class="essentials">
+        <span class="heading">200+ K</span><br /><span>Verified Experts</span>
+      </li>
+      <li class="essentials">
+        <span class="heading">2000+</span><br /><span>Properties</span>
+      </li>
+    </div>
+  </center>
+  <div class="property-options">
+    <span class="heading" style="margin-left: 50px"
+      >Properties- Buy & Rent</span
+    >
+    <div class="property-option-block">
+      <center>
+        <a href="#">
+          <div class="property-option-template bounce-in">
+            <img
+              class="property-option-template-picture"
+              src="{% static 'project/images/properties to buy.jpg' %}"
+            />
+            <div class="property-option-template-heading">
+              Properties to Buy
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="property-option-template bounce-in">
+            <img
+              class="property-option-template-picture"
+              src="{% static 'project/images/properties to rent.jpg' %}"
+            />
+            <div class="property-option-template-heading">
+              Properties to Rent
+            </div>
+          </div>
+          <br />
+        </a>
+      </center>
+    </div>
+  </div>
+
+  {% endblock%}
+</body>

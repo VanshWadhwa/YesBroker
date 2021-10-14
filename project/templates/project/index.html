@@ -1,0 +1,41 @@
+{% extends 'project/base.html' %} {% load static %} {% block title %}
+<title>YesBroker!</title>
+{% endblock %} {% block head-block %}
+<!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'project/css/scrollPage.css' %}"
+/>
+<script src="{% static 'project/js/scrollPage.js' %}"></script>
+
+{% endblock head-block %}
+
+<!--  -->
+
+{% block content %}
+<!-- Content of the property detail page -->
+
+<body>
+  <div class="container">
+    <div id="card_1" class="card transition minimize">
+      <h2>Card 1</h2>
+    </div>
+    <div id="card_2" class="card transition minimize">
+      <h2>Card 2</h2>
+    </div>
+    <div id="card_3" class="card transition minimize">
+      <h2>Card 3</h2>
+    </div>
+    <div id="card_4" class="card transition minimize">
+      <h2>Card 4</h2>
+    </div>
+    <div id="card_5" class="card transition minimize">
+      <h2>Card 5</h2>
+    </div>
+    <div id="card_6" class="card transition minimize"></div>
+    <!-- end .container -->
+  </div>
+</body>
+
+{% endblock content %}

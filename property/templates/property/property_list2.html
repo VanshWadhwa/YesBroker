@@ -1,0 +1,322 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block head-block %}
+<link rel="stylesheet" type="text/css" href="{% static 'project/css/grid1.css' %}">
+
+{% endblock head-block %}
+{% block content %} {% load project_extras %}
+
+
+{% if project_page_obj%}
+
+
+
+<h1 class="section-heading">- Listings -</h1>
+<br>
+<div class="main">
+
+  <ul class="cards">
+    <!-- <div class="property-display-main-section" style="justify-content:center;"> -->
+    {% for project in project_page_obj %}
+
+    <!-- <h2>{{ project.society }}</h2> -->
+    <spam class="cards_item">
+      <a class="card-clickable" href="{% url 'property-detail' pk=project.id %}" target="_blank">
+
+
+        <div class="card">
+        <div class="card_image">
+          <div class="fav-icon-div">
+          
+          
+          </div>
+          <div class = "card-image-div">
+    
+          <img class="card-top-image-img"   src="{% static 'project/images/new residential projects.jfif' %}" />
+
+          
+          <div class="card-text-box">
+            <h2 class="card_title">{{project.projectName}}</h2>
+
+            <!-- <h2 class="card_title">{{ project.society }}</h2> -->
+          </div>
+          
+          <img class="icon" id="fav-icon" src="{% static 'project/icons/heart.png' %}">
+
+
+          </div>
+          
+        </div>
+    
+        <div class="card_content">
+          
+          <div class="card-review">
+          <div class="card-review-star">
+            <img class="icon"  src="{% static 'project/icons/star.png' %}" />
+
+            {% if project.rating %}
+            {{ project.rating}}
+            {% else %}
+            4.5
+            {% endif %}
+          </div>
+          <div class="card-review-reviews">50+ Reviews</div>
+          </div>
+    
+          
+          <div class="card-location">By {{ project.developer}} DSR SSC The Classe</div>
+          <div class="card-location">
+            <img class="icon"  src="{% static 'project/icons/placeholder2.png' %}" />
+          
+            {% if project.location %}
+           
+            {{ project.location}}, {{ project.city}}
+            {% else %}
+              Info. Unavailable 
+            {% endif %}
+
+
+
+          </div>
+          <br />
+    
+          <!-- <p class="card_text">
+          Demo of pixel perfect pure CSS simple responsive card grid
+          layout
+          </p> -->
+    
+          <div class="card-data-table">
+          <div class="card-data-tile">
+            <spam class="card-data-title">Land</spam>
+            <spam class="colon">:</spam>
+            <spam class="card-data-value">
+              
+              {% if  project.sft %}
+           
+              {{ project.sft}} sq ft
+            {% else %}
+              Info. Unavailable 
+            {% endif %}
+            
+            </spam>
+          </div>
+          <div class="card-data-tile">
+            <spam class="card-data-title">Category</spam>
+    
+            <spam class="colon">:</spam>
+            <spam class="card-data-value">
+              <!-- {{ project.category}} -->
+            
+              {% if project.projectName == 'DSR SSC The Classe' %}  
+           
+              {{ category}}
+            {% else %}
+              Info. Unavailable 
+            {% endif %}
+            </spam>
+          </div>
+          <div class="card-data-tile">
+            <spam class="card-data-title">Completion Time</spam>
+            <spam class="colon">:</spam>
+            <spam class="card-data-value">
+              
+            
+              {% if  completionTime %}
+           
+              {{completionTime}}
+            {% else %}
+              Info. Unavailable 
+            {% endif %}
+            
+            </spam>
+            {{ birthday|date:"M d, Y" }}
+          </div>
+          <div class="card-data-tile">
+            <spam class="card-data-title">RERA Number</spam>
+            <spam class="colon">:</spam>
+            <!-- <spam class="card-data-value">{{ project.propertyId}}</spam> -->
+            <spam class="card-data-value">
+              {% if project.projectName == 'DSR SSC The Classe' %}  
+              
+                P02400001671
+              {% else %}
+                {{ project.id }}
+              
+                {% endif %}
+            
+            </spam>
+          </div>
+    
+          <div class="card-data-tile">
+            <spam class="card-data-title">For Sale</spam>
+            <spam class="colon">:</spam>
+            <spam class="card-data-value">
+              
+              {% if project.forSale %}  
+              
+              Available
+              <!-- //Availability -->
+            {% else %}
+            Not Available
+            
+              {% endif %} </spam>
+          </div>
+          <div class="card-data-tile">
+            <spam class="card-data-title">For Rent</spam>
+            <spam class="colon">:</spam>
+            <spam class="card-data-value">
+              {% if project.forRent %}  
+              
+              <!-- {{total_available_units}} -->
+              Available
+              <!-- //Availability -->
+            {% else %}
+            <!-- //Availability -->
+            Not Available
+            
+              {% endif %} </spam>
+          </div>
+
+        </div>
+        
+      </a>
+          <button data-toggle="collapse" data-target="#demo" style="    margin-bottom: 20px;"><spam class="card-data-title" style="font-weight: bolder;
+            float: left;
+            width: 100%;
+            /* overflow: hidden; */
+            display: flex;
+            flex-direction: row;
+            align-items: center;">Configurations <img class="icon"  src="{% static 'project/icons/downward.png' %}" /></spam></button>
+          
+
+
+<div id="demo" class="collapse">
+{% if project.projectName == 'DSR SSC The Classe' %}  
+
+<!-- <div class="card-data-table">
+  <div class="card-data-tile"> -->
+<div class="config-table" style="
+display: flex;
+flex-direction: column;">
+
+ <div class="config-tile">
+    <spam class="config-label"> Floor</spam> 
+    <spam class = 'colon'>-</spam>
+
+    <spam class="config-value">  {{ project.floor}} </spam>
+    </div>
+
+    <div class="config-tile">
+      <spam class="config-label"> Facing</spam> 
+      <spam class = 'colon'>-</spam>
+  
+      <spam class="config-value">  {{ project.facing}} </spam>
+      </div>
+    
+    
+    <div class="config-tile">
+    <spam class="config-label">  Config 1</spam> 
+    <spam class = 'colon'>-</spam>
+
+    <spam class="config-value">   {{ project.config1}}</spam>
+    </div>
+    
+    
+    <div class="config-tile">
+    <spam class="config-label">  Config 3</spam> 
+    <spam class = 'colon'>-</spam>
+
+    <spam class="config-value">  {{ project.config3}}</spam>
+    </div>
+    
+    
+   
+    
+    
+    </div>
+    <!-- </div>
+    </div> -->
+  {% else %}
+    //Configurations
+  </spam>
+    {% endif %}
+
+</div>
+
+        
+          
+        <!-- <button class="btn card_btn">Read More</button> -->
+        <div class="card-action-buttons">
+          <a class="card-action-button pdf-card-action-button" href="{% url 'pdf'  %}"><img class="button-image"  src="{% static 'project/icons/pdf.png' %}" /></a>
+          <!-- 8368261765 -->
+        <a class="card-action-button whatsapp-card-action-button" href="
+        
+        https://api.whatsapp.com/send?phone=+918368261765&text=
+        
+        
+        Hey I am interested for the property listed on YesBroker.in %0a %0a  *{{project.projectName}}* , _{{ project.location}}_ , _{{ project.city}}_  %0a  %0a *Handover* : {{completionTime}}  %0a %0a  *Land* : {{ project.sft}} sq ft 	%09  *Floor* : {{ project.floor}}  	%0a %0a  *Configurations* %0a  {{ project.config1}}%0a  {{ project.config3}}%0a 
+        
+        
+        " target="_blank">
+    
+          <img class="button-image"  src="{% static 'project/icons/WhatsApp.png' %}" /></a>
+          <a class="card-action-button calender-card-action-button"><img class="button-image"  src="{% static 'project/icons/schedule.png' %}" /></a>
+        </div>
+        </div>
+      </div>
+    </spam>
+
+    {% endfor %}
+    <!-- </div> -->
+  </ul>
+</div>
+
+  
+{% else %}
+
+<div class = 'no-results-div'>
+  <h2>No Result Found</h2>
+  <h4>Kindly Change Filters</h4>
+</div>
+
+{% endif %}
+
+
+<center>
+
+<div class="pagination">
+  <spam class="step-link">
+    {% if project_page_obj.has_previous %}
+    <a href="{% my_url 1 'page' request.GET.urlencode %}">&laquo; First</a>
+    <a
+      href="{% my_url project_page_obj.previous_page_number 'page' request.GET.urlencode %}"
+      >Previous</a
+    >
+
+    {% endif %}
+    <spam class="current">
+      Page {{ project_page_obj.number }} of
+      {{project_page_obj.paginator.num_pages }}
+    </spam>
+
+    {% if project_page_obj.has_next %}
+    <a
+      href="{% my_url project_page_obj.next_page_number 'page' request.GET.urlencode %}"
+      >Next </a
+    >
+    <a
+      href="{% my_url project_page_obj.paginator.num_pages 'page' request.GET.urlencode %}"
+      >Last &raquo;</a
+    >
+    {% endif %}
+  </spam>
+</div>
+</center>
+
+
+
+
+{% endblock%}

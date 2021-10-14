@@ -1,0 +1,186 @@
+.account-form{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	width: 30vw;
+	margin-left: 35vw;
+	margin-top: 15vw;
+	justify-content: center;
+	text-align: center;
+	background: white;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px rgb(254,188,54), -1px -1px 5px rgb(254,188,54);
+}
+.account-form h2{
+	font-family: verdana;
+	font-style: italic;
+	color: rgb(100,50,0);
+}
+.account-form > button{
+	cursor: pointer;
+	float: left;
+	border-radius: 2px;
+	background: white;
+	border: 0;
+	font-weight: bold;
+	font-size: 20px;
+	background: rgb(250,100,100);
+	font-family: sans-serif;
+}
+.account-form input{
+	width: 90%;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid rgb(158,88,54);
+}
+.form{
+	position: fixed;
+	z-index: 1;
+	margin-left: 0vw;
+	margin-top: 0vw;
+}
+.signin-login{
+	display: block;
+	color: red;
+}
+.signin-login a{
+	cursor: pointer;
+}
+#sign-in{
+	display: block;
+}
+#log-in{
+	display: none;
+}
+#wholebody{
+	display: block;
+	z-index: 0;
+}
+.top-banner{
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 40vw;
+	background: rgb(120,120,150);
+	background-image: url('/images/banner.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 40vw;
+}
+.left-tagline{
+	display: block;
+	margin-left: 10vw;
+	margin-top: 4vw;
+	color: rgb(120,60,10);
+	font-family: 'verdana';
+	font-size: 25px;
+}
+.right-description{
+	display: block;
+	margin-left: 30vw;
+	margin-top: 10vw;
+	width: 20vw;
+	height: 15vw;
+	background: rgb(230,230,250);
+	background-image: url('/images/bannerdescription.jpg');
+	font-family: "verdana";
+	font-size: 22px;
+	background-size: 20vw 15vw;
+	background-repeat: no-repeat;
+	background-size: 20vw 15vw;
+	border-radius: 10px;
+	text-align: center;
+	border: 3px solid rgb(254,188,54);
+	box-shadow: 5px 0px 20px rgba(0,0,0,0.3), 0px 5px 20px rgba(0,0,0,0.3), -5px 0px 20px rgba(0,0,0,0.3), 0px -5px 20px rgba(0,0,0,0.3);
+}
+.top-features{
+	margin-top: 50px;
+	font-family: 'bahnschrift';
+}
+.top-features li{
+	margin-right: 50px;
+	border-bottom: 0px solid rgb(254,188,54);
+}
+.essentials:hover{
+	border-bottom: 2px solid rgb(254,188,54);
+	transition: 0.2s;
+}
+.middle-body{
+	margin: 5vw;
+	width: 90%;
+	justify-content: center;
+	text-align: center;
+}
+.middle-body a{
+	background: red;
+	margin: 0 5vw;
+	width: auto;
+	background: rgb(254,188,54);
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 1vw;
+	font-weight: bold;
+	color: rgb(100,50,80);
+}
+.middle-body a:hover{
+	box-shadow: 1px 1px 10px rgb(0,0,0,0.3), -1px -1px 10px rgb(0,0,0,0.3);
+	transition: 0.2s;
+}
+.bottom-banner{
+	margin-top: 20%;
+}
+.details-other{
+	display: flex;
+}
+@media screen and (max-width: 1250px){
+	div{
+		transition: 0.5s;
+	}
+	.top-banner{
+		height: 50vw;
+		background-size: 100% 50vw;
+	}
+	.left-tagline{
+		font-size: 3vw;
+		float: left;
+		margin-left: 0;
+		margin-top: 0;
+	}
+	.right-description{
+		width: 30vw;
+		height: 25vw;
+		font-size: 2.8vw;
+		margin-left: 60vw;
+		margin-top: 18vw;
+		background-size: 30vw 25vw;
+		margin-left: 0vw;
+	}
+	.bottom-banner{
+		margin-top: 60%;
+		display: block;
+		height: 450px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.left-tagline{
+		font-size: 3.5vw;
+	}
+	.right-description{
+		height: 22vw;
+		margin-left: -10vw;
+		font-size: 2.8vw;
+		background-size: 30vw 22vw;
+		border: 1px solid rgb(254,188,54);
+	}
+	.property-option-template{
+		width: 90%;
+	}
+	.account-form{
+	width: 70vw;
+	margin-left: 15vw;
+	}
+	.details-other{
+	display:block;
+	}
+}

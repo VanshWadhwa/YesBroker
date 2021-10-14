@@ -1,0 +1,9 @@
+.main-section-div1-img-div {
+  height: 50vw;
+  background-size: 100% 50vw;
+}
+
+.main-section-div1-img {
+  width: 100%;
+  height: auto;
+}
