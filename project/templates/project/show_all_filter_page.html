@@ -84,7 +84,7 @@
     <!-- <h2>{{ project.society }}</h2> -->
     <!-- <div class="annimation-card" data-aos="flip-left" 
     data-aos-delay="50"> -->
-    <spam class="cards_item "   data-aos="flip-left" 
+    <spam class="cards_item "   
     >
     <!-- <spam class="cards_item "  
     data-aos="fade-up"
@@ -106,28 +106,24 @@
           
           
           </div>
-          <div class = "card-image-div ">
+          <div class = "card-image-div">
     
-          <img class="card-top-image-img"   src="{% static 'project/images/new residential projects.jfif' %}" />
-
-          <!-- <div class="card-text-box"> -->
-
-          <!-- <marquee> -->
-<!-- <div class="scroll">text</div> -->
-            <!-- <marquee class="card-title-div"> -->
-<!-- 9+ -->
-              <h2 class="card_title">{{ project.developer }}</h2>
-            <!-- </marquee> -->
-
-          <!-- </marquee> -->
-          <!-- </div> -->
-          <!-- <br> -->
-          <!-- <h2 class="card_title">fsmkm</h2> -->
-          
-          <img class="icon" id="fav-icon" src="{% static 'project/icons/heart.png' %}">
-
-
-          </div>
+            <img class="card-top-image-img"   src="{% static 'project/images/new residential projects.jfif' %}" />
+  
+            <div class="card-text-box">
+  
+              <h4 class="card_title"><b>{{ project.society }},</b>
+               {{ project.category }} <br> By {{ project.society }}</h4>
+              <!-- <h4>{{ project.category }}</h4> -->
+            </div>
+            <!-- <br> -->
+            <!-- <h2 class="card_title">fsmkm</h2> -->
+            
+            <img class="icon" id="fav-icon" src="{% static 'project/icons/heart.png' %}">
+  
+  
+            </div>
+          <!--  -->
           
         </div>
     
@@ -147,7 +143,7 @@
           </div>
     
           
-          <div class="card-location">By {{ project.society }}</div>
+          <!-- <div class="card-location">By {{ project.society }}</div> -->
           <div class="card-location">
             <img class="icon"  src="{% static 'project/icons/placeholder2.png' %}" />
             {% if project.developer == 'DSR SSC The Classe' %}  

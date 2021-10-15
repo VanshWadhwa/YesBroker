@@ -25,7 +25,8 @@
       <!-- <h2>{{ project.society }}</h2> -->
       <!-- <div class="annimation-card" data-aos="flip-left" 
       data-aos-delay="50"> -->
-      <spam class="cards_item "   data-aos="flip-left" 
+      <spam class="cards_item "  
+       
       >
       <!-- <spam class="cards_item "  
       data-aos="fade-up"
@@ -57,7 +58,13 @@
   <!-- <div class="scroll">text</div> -->
               <!-- <marquee class="card-title-div"> -->
   <!-- 9+ -->
-                <h2 class="card_title">{{project.projectName}}</h2>
+                <!-- <h2 class="card_title">{{project.projectName}}</h2> -->
+                <div class="card-text-box">
+  
+                  <h4 class="card_title"><b>{{ project.projectName }}</b>
+                    <!-- By {{ project.society }}</h4> -->
+                  <!-- <h4>{{ project.category }}</h4> -->
+                </div>
               <!-- </marquee> -->
   
             <!-- </marquee> -->
@@ -88,7 +95,7 @@
             </div>
       
             
-            <div class="card-location">By {{ project.projectName}}</div>
+            <!-- <div class="card-location">By {{ project.projectName}}</div> -->
             <div class="card-location">
               <img class="icon"  src="{% static 'project/icons/placeholder2.png' %}" />
             

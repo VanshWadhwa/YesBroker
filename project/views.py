@@ -118,6 +118,16 @@ def premium_services(request):
     # }
 
     return render(request, 'project/premium-services.html', {})
+def login(request):
+
+    # projects=Project.objects.all().distinct()
+    # projects=Project.objects.order_by('category').values_list('category', flat=True).distinct()
+
+    # context = {
+    #     "projects" : projects,
+    # }
+
+    return render(request, 'project/login.html', {})
 
     
 def search_address(request):
