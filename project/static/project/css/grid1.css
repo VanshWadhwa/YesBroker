@@ -146,6 +146,9 @@ iframe, object, embed {
   background: #e0e0e0;
   /* background-color: transparent; */
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  /* max-height: fit-content; */
+  height: fit-content;
+
 }
 
 .card_content {
