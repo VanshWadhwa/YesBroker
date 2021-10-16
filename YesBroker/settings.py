@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'import_export',
     'property.apps.PropertyConfig',
     'project.apps.ProjectConfig',
+    'user.apps.UserConfig',
     'crispy_forms',
     'client.apps.ClientConfig',
     # 'autocomplete_light',
@@ -139,5 +140,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'project-filters'
+LOGIN_URL = 'login'
 
 django_heroku.settings(locals())

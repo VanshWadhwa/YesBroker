@@ -110,12 +110,25 @@
     
             <img class="card-top-image-img"   src="{% static 'project/images/new residential projects.jfif' %}" />
   
+            <!-- Nice Stuff -->
             <div class="card-text-box">
-  
-              <h4 class="card_title"><b>{{ project.developer }},</b>
-               {{ project.category }} <br> By {{ project.society }}</h4>
-              <!-- <h4>{{ project.category }}</h4> -->
+            <i>
+
+              <spam class="card_title">
+                <h4>
+
+                  <b>{{ project.developer }},</b>
+                </h4>
+                <h5>
+
+                  {{ project.category }} <br> By {{ project.society }}</spam>
+                </h4>
+              </i>
+
             </div>
+
+
+
             <!-- <br> -->
             <!-- <h2 class="card_title">fsmkm</h2> -->
             
@@ -128,6 +141,21 @@
         </div>
     
         <div class="card_content">
+          <!-- other nice stuff -->
+          <!-- <spam class="card_title">
+            <i>
+
+            <h3>
+
+              <b>{{ project.developer }},</b>
+            </h3>
+            <h5>
+
+              {{ project.category }} <br> By {{ project.society }}
+            </h5>
+          </i>
+          
+          </spam> -->
           
           <div class="card-review">
           <div class="card-review-star">
@@ -143,7 +171,9 @@
           </div>
     
           
+          
           <!-- <div class="card-location">By {{ project.society }}</div> -->
+          
           <div class="card-location">
             <img class="icon"  src="{% static 'project/icons/placeholder2.png' %}" />
             {% if project.developer == 'DSR SSC The Classe' %}  

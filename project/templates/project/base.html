@@ -75,9 +75,25 @@
                 <spam class="nav-item">
                     <a class="nav-link" href="{% url 'premium-services' %}">Premium Services</a>
                 </spam>
+                  {% if user.is_authenticated %}
+                  <spam class="nav-item">
+                  <a class="nav-link" href="{% url 'premium-services' %}">Favorites</a>
+                  </spam>
+                  <spam class="nav-item">
+                  <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                  </spam>
+                  <spam class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </spam>
+                {% else %}
                 <spam class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </spam>
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  </spam>
+                  <spam class="nav-item">
+                  <a class="nav-link" href="{% url 'register' %}">Register</a>
+                  </spam>
+                {% endif %}
+              
                 <!-- <spam class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Societies
