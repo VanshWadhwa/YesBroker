@@ -84,7 +84,8 @@
     <!-- <h2>{{ project.society }}</h2> -->
     <!-- <div class="annimation-card" data-aos="flip-left" 
     data-aos-delay="50"> -->
-    <spam class="cards_item "   >
+    <spam class="cards_item "   
+    >
     <!-- <spam class="cards_item "  
     data-aos="fade-up"
     data-aos-offset="200"
@@ -131,9 +132,10 @@
             <!-- <br> -->
             <!-- <h2 class="card_title">fsmkm</h2> -->
             
-            
+            <a>
               
             <!-- <img class="icon" id="fav-icon" src="{% static 'project/icons/heart.png' %}"> -->
+            </a>
   
   
             </div>
@@ -159,18 +161,18 @@
           </spam> -->
           
           <div class="card-review">
-            <div class="card-review-star">
-              <img class="icon"  src="{% static 'project/icons/star.png' %}" />
-  
-              {% if project.rating %}
-              {{ project.rating}}
-              {% else %}
-              4.5
-              {% endif %}
-            </div>
-            <div class="card-review-reviews">50+ Reviews</div>
-            </div>
-      
+          <div class="card-review-star">
+            <img class="icon"  src="{% static 'project/icons/star.png' %}" />
+
+            {% if project.rating %}
+            {{ project.rating}}
+            {% else %}
+            4.5
+            {% endif %}
+          </div>
+          <div class="card-review-reviews">50+ Reviews</div>
+          </div>
+    
           
           
           <!-- <div class="card-location">By {{ project.society }}</div> -->

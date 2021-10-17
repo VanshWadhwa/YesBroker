@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 
 
@@ -76,13 +78,14 @@ class Property(models.Model):
     forRent = models.CharField(max_length=50, null=True, blank=True)
     priceForSale = models.IntegerField(null=True, blank=True)
     priceForRent = models.IntegerField(null=True, blank=True)
+    favourites = models.ManyToManyField( User, related_name='favourite_property', default=None, blank=True)
 
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
-    def __str__(self) :
-        return str(self.id) + " - " + self.projectName
+    # def __str__(self) :
+    #     return str(self.id) + " - " + self.projectName
 
     # msq = None
     # def getMsq(self):

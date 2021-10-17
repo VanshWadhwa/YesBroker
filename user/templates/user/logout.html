@@ -1,4 +1,14 @@
-{% extends "project/base.html" %} {% block content %}
+{% extends 'project/userBase.html' %} {% load static %} {% load
+crispy_forms_tags %} {% block title %}
+<title>Favourite</title>
+{% endblock title%} {% block head-block %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'project/css/userPages.css' %}"
+/>
+
+{% endblock head-block %} {% block content %}
 <h2>You have been logged out</h2>
 <div class="border-top pt-3">
   <small class="text-muted">

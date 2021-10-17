@@ -1,6 +1,6 @@
 from .forms import DateTimeForm
 from django.core import paginator
-from django.shortcuts import render
+from django.shortcuts import render 
 import datetime
 from utils.Scheduler1 import create_event_for_meeting
 
@@ -13,6 +13,7 @@ from django.contrib import messages
 
 
 # Create your views here.
+
 
 
 def show_all_filter_page(request):
@@ -52,8 +53,8 @@ def show_all_filter_page(request):
 
     print('request.method ' , request.method)
 
-    if request.method == 'POST':
-            dtform = DateTimeForm(request.POST or None)
+    if request.method == 'project':
+            dtform = DateTimeForm(request.project or None)
 
             dtformDict = dtform.data
 
@@ -70,7 +71,7 @@ def show_all_filter_page(request):
 
 
 
-            # if 'date2' in request.POST and 'date3' in request.POST:
+            # if 'date2' in request.project and 'date3' in request.project:
             #     date1Con = datetime.datetime.strptime(date1, '%d/%b/%Y %H:%M')
             #     dateFormat = date1Con.strftime('%d-%m-%Y %H:%M')
             #     s_date = datetime.datetime.strptime(dateFormat, "%d-%m-%Y %H:%M")

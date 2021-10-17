@@ -1,8 +1,56 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render , redirect, get_object_or_404, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from project.models import Project
+from property.models import Property
+from django.contrib import messages
 
+
+
+
+@ login_required
+def favourite_list(request):
+    # new = Project.newmanager.filter(favourites=request.user)
+    project_list = Project.objects.filter(favourites=request.user)
+    print(project_list)
+    property_list = Property.objects.filter(favourites=request.user)
+    return render(request,
+                  'user/favourites.html',
+
+                  context={
+                      
+                      'project_list': project_list,
+                      'property_list': property_list,
+
+                   })
+
+
+@ login_required
+def favourite_add(request, id):
+    project = get_object_or_404(Project, id=id)
+    if project.favourites.filter(id=request.user.id).exists():
+        project.favourites.remove(request.user)
+        messages.success(request , 'Removed from your favourites')
+
+    else:
+        project.favourites.add(request.user)
+        messages.success(request , 'Added to your favourites')
+
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+@ login_required
+def favourite_add_property(request, id):
+    property = get_object_or_404(Property, id=id)
+    if property.favourites.filter(id=request.user.id).exists():
+        property.favourites.remove(request.user)
+        messages.success(request , 'Removed from your favourites')
+
+    else:
+        property.favourites.add(request.user)
+        messages.success(request , 'Added to your favourites')
+
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 def register(request):
     if request.method == 'POST':
@@ -12,7 +60,7 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(
                 request, f'Your account has been created! You are now able to log in')
-            return redirect('project')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'user/register.html', {'form': form})

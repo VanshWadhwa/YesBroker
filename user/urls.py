@@ -36,6 +36,10 @@ urlpatterns = [
              template_name='user/password_reset_complete.html'
          ),
          name='password_reset_complete'),
+
+          path('fav/<int:id>/', user_views.favourite_add, name='favourite_add'),
+          path('fav/property/<int:id>/', user_views.favourite_add_property, name='favourite_add_property'),
+    path('favourites/', user_views.favourite_list, name='favourite_list'),
 ]   
 
     # path('', include('blog.urls')),
