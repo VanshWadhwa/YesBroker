@@ -264,6 +264,10 @@ div[class*=box] {
 	color: rgb(0, 0, 0);
 	transition: all 0.5s;
 	position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .btn-three::before {
 	content: '';

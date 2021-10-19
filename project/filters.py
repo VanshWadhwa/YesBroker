@@ -15,13 +15,17 @@ class ProjectFilter(django_filters.FilterSet):
     CATEGORY_CHOICES = (
         ("Com Lowrise Office","Com Lowrise Office"),
         ("Com Lowrise Retail" , "Com Lowrise Retail"),
-        ("Fake" , "Fake"),
         ("Res Countryside Farms & Plots" , "Res Countryside Farms & Plots"),
         ("Res Highrise Society" , "Res Highrise Society"),
         ("Res Lowrise Society" , "Res Lowrise Society"),
         ("Res Lowrise Standalone" , "Res Lowrise Standalone"),
         ("Res Midrise Society" , "Res Midrise Society"),
         ("Res Urban Villas" , "Res Urban Villas"),
+    )
+
+    RERA_CHOICES = (
+        ("True","True"),
+        ("False" , "False"),
     )
     AGE_CHOICES = (
         ("Com Lowrise Office","Com Lowrise Office"),
@@ -36,8 +40,9 @@ class ProjectFilter(django_filters.FilterSet):
     )
     # url = "/project/search/?address"
     category = django_filters.ChoiceFilter(label  = 'Category' , choices = CATEGORY_CHOICES )
+    rera = django_filters.ChoiceFilter( choices = RERA_CHOICES ,label  = 'RERA'   )
 
-    rera = django_filters.BooleanFilter(field_name='rera', lookup_expr='isnull' ,label  = 'RERA' )
+    # rera = django_filters.BooleanFilter(field_name='rera', lookup_expr='isnull' ,label  = 'RERA' )
     society = django_filters.CharFilter( lookup_expr='icontains' , label  = 'Society' )
     developer = django_filters.CharFilter( lookup_expr='icontains' , label  = 'Developer' )
 

@@ -180,7 +180,7 @@
           <div class="card-location">
             <img class="icon"  src="{% static 'project/icons/placeholder2.png' %}" />
             {% if project.developer == 'DSR SSC The Classe' %}  
-            {{ project.subLocality}}, {{ project.location}}  , Hyderabad , Kokapet
+            {{ project.subLocality}}, {{ project.location}}  Hyderabad , Kokapet
             {% else %}
             {% if project.subLocality %}
            
@@ -237,8 +237,8 @@
               
               {{total_available_units}}
             {% else %}
-            //Availability
-            
+            Info. Unavailable
+           
               {% endif %} </td>
           </tr>
           {% if project.developer == 'DSR SSC The Classe' %}  
@@ -320,8 +320,8 @@
       </tr>
       </div>
     {% else %}
-      //Configurations
-    </spam>
+      Info. Unavailable
+   </spam>
       {% endif %}
 
 </div>

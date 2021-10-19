@@ -1,0 +1,64 @@
+{% extends 'project/base.html' %} {% load static %} {% block title %}
+<title>Developers</title>
+{% endblock title%} {% block head-block %}
+
+<style>
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+  }
+  .list-ul {
+    display: block;
+    text-align: center;
+  }
+  .list-li {
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+      0.3s box-shadow,
+      0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    padding: 14px 80px 18px 36px;
+    cursor: pointer;
+  }
+
+  @media (min-width: 20rem) {
+    .list-ul {
+    }
+  }
+
+  .list-li:hover {
+    /* background: transparent; */
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    /* height: 110%; */
+  }
+</style>
+{% endblock head-block %}
+
+<!--  -->
+{% block content %}
+<!--  -->
+
+<!-- <div class="container"> -->
+<div class="main">
+  <ul class="list-ul">
+    <h1 class="developer-title">- Developers -</h1>
+    {% for project in projects %}
+
+    <!-- window.open(`/property/${result}`) -->
+    <a href="/property/{{ project }}" class="list-anchor-tag">
+      <li class="list-li">{{project}}</li>
+    </a>
+
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- </div> -->
+<!--  -->
+{% endblock content %}

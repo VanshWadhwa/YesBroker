@@ -6,16 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .main-title {
+      font-size: 65px;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      font-weight: bolder;
+      background-color: cadetblue;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ratings {
+      display: flex;
+      flex-direction: column;
+      float: right;
+      color: black;
+      font-weight: bold;
+      color: brown;
+    }
+  </style>
   <body>
-    <h1
-      style="
-        padding: 50px;
-        margin: 50px;
-        background-color: antiquewhite;
-        color: red;
-      "
-    >
-      {{myvar}}
-    </h1>
+    <div class="section-one">
+      <h1 class="main-title">// Title</h1>
+      <h3 class="location">// Location</h3>
+      <h3 class="Developer">// Developer</h3>
+      <h3 class="category">// Category</h3>
+
+      <h4 class="ratings">// ratings</h4>
+
+      <table class="main-table">
+        <tr class="main-table-row">
+          <th class="main-table-heading">//label</th>
+          <td class="main-table-value">//value</td>
+        </tr>
+
+        <tr class="main-table-row">
+          <th class="main-table-heading">//label</th>
+          <td class="main-table-value">//value</td>
+        </tr>
+
+        <tr class="main-table-row">
+          <th class="main-table-heading">//label</th>
+          <td class="main-table-value">//value</td>
+        </tr>
+      </table>
+
+      <spam class="configuration-label">//Configrations</spam>
+
+      <div class="configuration-data">
+        //Floor - 1F Facing - EF Config 1 - 3BHK Config 3 - 4 Bath + 2 Balcony +
+        Utility
+      </div>
+    </div>
   </body>
 </html>

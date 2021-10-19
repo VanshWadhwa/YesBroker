@@ -1,608 +1,101 @@
-{% extends 'project/base.html' %}
-{% load crispy_forms_tags %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    @page {
+      /* font-size: 40px; */
 
+      size: a4 portrait;
+      @frame header_frame {
+        /* Static Frame */
+        -pdf-frame-content: header_content;
+        left: 50pt;
+        width: 512pt;
+        top: 50pt;
+        height: 40pt;
+      }
+      @frame content_frame {
+        /* Content Frame */
+        left: 50pt;
+        width: 512pt;
+        top: 90pt;
+        height: 632pt;
+      }
+      @frame footer_frame {
+        /* Another static Frame */
+        -pdf-frame-content: footer_content;
+        left: 50pt;
+        width: 512pt;
+        top: 772pt;
+        height: 20pt;
+      }
+    }
+    .main-title {
+      font-size: 65px;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      font-weight: bolder;
+      background-color: cadetblue;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
 
+    .ratings {
+      display: flex;
+      flex-direction: column;
+      float: right;
+      color: black;
+      font-weight: bold;
+      color: brown;
+    }
 
-{% block head-block %}
-<link rel="stylesheet" type="text/css" href="{% static 'project/css/property-detail.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'project/css/grid1.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'project/css/fluid-gallery.css' %}">
+    .location,
+    .Developer,
+    .category {
+      color: brown;
+      margin-top: 0px;
+    }
+  </style>
+  <body>
+    <div class="section-one">
+      <h1 class="main-title">// Title</h1>
+      <h3 class="location">// Location</h3>
+      <h3 class="Developer">// Developer</h3>
+      <h3 class="category">// Category</h3>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+      <h4 class="ratings">// ratings</h4>
 
+      <table class="main-table">
+        <tr class="main-table-row">
+          <th class="main-table-heading">//label</th>
+          <td class="main-table-value">//value</td>
+        </tr>
 
-{% endblock head-block %}
-{% block title %}
-<title>{{ property.projectName }}</title>
-{% endblock %}
-<!--  -->
-{% block content %}
-<!-- Content of the property detail page -->
+        <tr class="main-table-row">
+          <th class="main-table-heading">//label</th>
+          <td class="main-table-value">//value</td>
+        </tr>
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <tr class="main-table-row">
+          <th class="main-table-heading">//label</th>
+          <td class="main-table-value">//value</td>
+        </tr>
+      </table>
 
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <!-- <spam class="main-section-title title-center" >{{ property.projectName }}</spam> -->
+      <spam class="configuration-label">//Configrations</spam>
 
-
-
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{% static 'project/images/DSR/2.jpg'%}" class="d-block w-100" alt="...">
-        
-        
+      <div class="configuration-data">
+        //Floor - 1F Facing - EF Config 1 - 3BHK Config 3 - 4 Bath + 2 Balcony +
+        Utility
       </div>
-      <div class="carousel-item">
-        <img src="{% static 'project/images/DSR/13.jpg'%}" class="d-block w-100" alt="...">
-        
-        
-      </div>
-      <div class="carousel-item">
-        <img src="{% static 'project/images/DSR/11.jpg'%}" class="d-block w-100" alt="...">
-        
-       
-      </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-
-    <div class="aos-animation" data-aos="zoom-in">
-
-    <div class="carousel-inner-data">
-
-        <!-- <spam class="carousel-title">
-            DSR SSC The Classe
-        </spam> -->
-        <spam class="main-section-title">{{ property.projectName }}</spam>
-        <span style="font-size: 12px; margin-left: 50px;">
-          
-
-            <!-- Rera Tag to Be Applied If True then tag -->
-            <!-- omk?? -->
-
-
-        </span>
-        <!-- Developer Name To be Added -->
-        <spam class="main-section-developer"><img class="icon" src="{% static 'project/icons/development.png' %}" />Developed by: {{ property.projectName }}</spam>
-        {% if property.projectName == 'DSR SSC The Classe' %}  
-           
-        <span style="margin-left: 50px;"><a href="https://goo.gl/maps/4bLSdCQ6UBMEq2za9" target="_blank">View On Map </a></span>
-            {% endif %}
-
-    
-        <spam class="main-section-location"><img class="icon" src="{% static 'project/icons/placeholder.png'%}" />{{ property.city }} , {{ property.location }}</spam>
-        <spam class="main-section-price">Price : ₹ 50 lakhs</spam>
-        <spam class="main-section-price-label"> *Price Negotiable</spam>
-
-        <table class="card-data-table">
-            <tr class="card-data-tile">
-                <td class="card-data-title">Average Price</td>
-                <td class="colon">:</td>
-                <td class="card-data-value"> ₹ {{ property.priceForSale }}</td>
-            </tr>
-            <tr class="card-data-tile">
-                <td class="card-data-title">Plot Area</td>
-                <td class="colon">:</td>
-                <td class="card-data-value">{{ property.sft }} Sq Ft</td>
-            </tr>
-
-            <!-- <?php
-            $age = $result["age"];
-            if (strpos($age, "-") !== false) {
-                $age = "Under Development";
-            } elseif (strpos($age, ".") !== false && strlen(substr($age, strpos($age, ".") + 1)) > 2) {
-                $age = substr($age, 0, strpos($age, ".") + 2) . " years";
-            } elseif (strlen($age) > 1 && strpos($age, "years") === false) {
-                $age .= " years";
-            } else {
-                $age = "info unavailable";
-            }
-            ?> -->
-
-            <!-- Age To Word Transcript -->
-
-            <tr class="card-data-tile">
-                <td class="card-data-title">Completion Time</td>
-                <td class="colon">:</td>
-                <td class="card-data-value">  {% if property.projectName == 'DSR SSC The Classe' %}  
-           
-                  Dec 2025
-                  {% else %} Info. Unavailable
-                      {% endif %}</td>
-            </tr>
-            
-            <!-- table div -->
-        </table>
-
-        
-        
-        
-    </div>
-    </div>
-
-
-
-    <div class="float-left-button">
-      <a class="button-whatsapp-contact-us contactus-buttons" href="https://api.whatsapp.com/send?phone=+918368261765&text=Hey I am interested for the property listed on YesBroker.in with Project id ' . $result['propertyid'] . ', developed by ' . $result['developer'] . ' in ' . $result['projectname'] . ' society, which is for Rs.' . $result['price'] . '." target="_blank">
-           
-        <img class="icon-contactUs" src="{% static 'project/icons/WhatsApp.png'%}" />Contact Us
-
-        </a>
-
-      <button type="button" class="button-form-contact-us contactus-buttons" data-toggle="modal" data-target="#exampleModalCenter">
-        <img class="icon-contactUs" src="{% static 'project/icons/contact (1).png'%}" /> Contact Us
-      </button>
-    </div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Contact Us</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            
-
-
-            <!-- <h3>Contact Us</h3> -->
-          <form class = 'contact-us-form' action="" method="post">
-            <!--  -->
-            {% csrf_token %}
-            {{clientForm|crispy}}
-                                
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input type="submit" class="btn btn-primary" />
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>  
-       
-    <!-- Button trigger modal -->
-   
-
-  <!-- </div> -->
-
-  
-  <center>
-
-      <spam class="neu-card-heading center "> Pictures </spam>
-  </center>
-  <div class="container">
-      
-
- 
-    <div class="row photos">
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/2.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/2.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/3.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/3.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/4.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/4.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/5.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/5.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/6.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/6.jpg'%}"></a></div>
- 
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/8.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/8.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/9.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/9.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/10.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/10.jpg'%}"></a></div>
-        <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" data-aos="fade-zoom-in" data-aos-duration="1500" ><a href="{% static 'project/images/DSR/11.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/11.jpg'%}"></a></div>
-        <!-- <div class="col-sm-7 col-md-5 col-lg-4 item gallery-image" ><a href="{% static 'project/images/DSR/12.jpg'%}" data-lightbox="photos"><img class="img-fluid" src="{% static 'project/images/DSR/12.jpg'%}"></a></div> -->
-    
-    </div>
-</div>
-</div>
-
-
-
-
-<div class="neu-card neu-card-left" data-aos="fade-right">
-    <spam class="neu-card-heading"> Availability </spam>
-
-
-  
-    
-    <table class="card-data-table">
-        <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/architect.png'%}" />Total Available Units
-            </td>
-            <td class="colon">:</td>
-            <td class="card-data-value"> {{total_available_units}} </td>
-        </tr>
-        
-        <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/architect.png'%}" />Sale Units
-            </td>
-            <td class="colon">:</td>
-            <td class="card-data-value"> {{property_for_sale}} </td>
-        </tr>
-        <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/architect.png'%}" />Rent Units
-            </td>
-            <td class="colon">:</td>
-            <td class="card-data-value"> {{property_for_rent}} </td>
-        </tr>
-        <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/coupon.png'%}" />For Sale
-            </td>
-            <td class="colon">:</td>
-            <td class="card-data-value"> {{property.forSale}} </td>
-        </tr>
-        <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/house.png'%}" />For Rent
-            </td>
-            <td class="colon">:</td>
-            <td class="card-data-value"> {{property.forRent}}</td>
-        </tr>
-       
-
-
-
-
-<!-- 
-    if ($result['projectname'] === "DSR SSC The Classe") {
-        echo '
-
-        <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/price-tag.png'%}" />Sale Units</td>
-            
-            <td class="colon">:</td>
-            <td class="card-data-value">' . $mysqli->query("SELECT COUNT(*) AS TOTAL FROM newproperty WHERE ( projectname='DSR SSC The Classe' AND availability LIKE '%Sale:Available%' )")->fetch_assoc()['TOTAL'] . '</td>
-            </tr>
-
-
-        <tr class="card-data-tile">
-        <td class="card-data-title"><img class="icon" src="{% static 'project/icons/car-key.png'%}" />Rent Units</td>
-        <td class="colon">:</td>
-        <td class="card-data-value">' . $mysqli->query("SELECT COUNT(*) AS TOTAL FROM newproperty WHERE ( projectname='DSR SSC The Classe' AND availability LIKE '%Rent:Available%' )")->fetch_assoc()['TOTAL'] . '</td>
-
-    </tr>
-
-    ';
-    } --> 
-
-    <!-- if ($result['availability'] != NULL) {
-        foreach (explode(" ; ", substr($result['availability'], 0, -3)) as $available) {
-            echo '
- -->
-
-
-
-
-   
-
-</table>
-    
-    
-
-
-
-
-
-
-
-
-</div>
-</div>
-<div class="neu-card neu-card-right" data-aos="fade-right"  >
-    <spam class="neu-card-heading"> Amenities </spam>
-    <table class="card-data-table">
-      <tr class="card-data-tile">
-        <td class="card-data-title">
-          <img class="icon" src="{% static 'project/icons/chest-of-drawers.png' %}" />
-          Furnishing
-        </td>
-        <td class="colon">:</td><td class="card-data-value">{{ property.furnishing }} </td>
-      </tr>
-      <tr class="card-data-tile">
-        <td class="card-data-title">
-          <img class="icon" src="{% static 'project/icons/servant-outline.png' %}" />
-          Servant Room</td>
-
-        <td class="colon">:</td>
-        <td class="card-data-value">
-            
-            
-            {% if property.servantRoom %}
-            Available
-            {% else %}
-            Not Available
-            {% endif %}
-        
-        </td>
-      </tr>
-      <tr class="card-data-tile">
-<td class="card-data-title"
-          ><img class="icon" src="{% static 'project/icons/video-call.png' %}" />Media Room</
-        >
-        <td class="colon">:</td><td class="card-data-value">
-            
-            {% if property.mediaRoom %}
-            Available
-            {% else %}
-            Not Available
-            {% endif %}        
-        </td>
-      </tr>
-      <tr class="card-data-tile">
-        <td class="card-data-title">
-          <img class="icon" src="{% static 'project/icons/pooja.png' %}" />Pooja Room</td>
-        <td class="colon">:</td><td class="card-data-value">   {% if property.poojaRoom %}
-            Available
-            {% else %}
-            Not Available
-            {% endif %}</td>
-      </tr>
-
-      <tr class="card-data-tile">
-<td class="card-data-title"
-          ><img class="icon" src="{% static 'project/icons/studying.png' %}" />Study/Office
-          Room</
-        >
-        <td class="colon">:</td><td class="card-data-value">   {% if property.studyOfficeRoom %}
-            Available
-            {% else %}
-            Not Available
-            {% endif %}</td>
-      </tr>
-
-      <tr class="card-data-tile">
-<td class="card-data-title"
-          ><img class="icon" src="{% static 'project/icons/bed.png' %}" />Bedroom
-        </td>
-        <td class="colon">:</td><td class="card-data-value">{{ property.bedroom }}</td>
-      </tr>
-
-      <tr class="card-data-tile">
-<td class="card-data-title"
-          ><img class="icon" src="{% static 'project/icons/cutlery.png' %}" />Kitchen
-        </td>
-        <td class="colon">:</td><td class="card-data-value">{{ property.kitchen }}</td>
-      </tr>
-    </table>
-  </div>
-
-
-
-
-
-        <!-- <?php
-            if ($result['amenities'] != NULL) {
-                foreach (explode(" ; ", substr($result['amenities'], 0, -3)) as $amenity) {
-                    echo '
-                    
-                            <tr class="card-data-tile">
-                            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/home.png'%}" />' . explode(":", $amenity)[0] . '</td>
-                            <td class="colon">:</td>
-                            <td class="card-data-value">' . explode(":", $amenity)[1] . '</td>
-                        </tr>
-                        
-                        ';
-                    }
-                } else {
-                    echo ' -->
-                    
-                    <!-- </div> -->
-                    
-                 
-       
-<!-- </div> -->
-
-<div class="neu-card neu-card-left" data-aos="fade-right">
-    <spam class="neu-card-heading"> Location </spam>
-    <table class="card-data-table">
-  
-                
-           
-       
-
-            <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/home.png'%}" />   Tower No  </td>
-            <td class="colon">:</td>
-            <td class="card-data-value">   {{ property.towerNumber }}  </td>
-            </tr>
-
-            <tr class="card-data-tile">
-            <td class="card-data-title"><img class="icon" src="{% static 'project/icons/home.png'%}" />   Tower Name   </td>
-            <td class="colon">:</td>
-            <td class="card-data-value">  {{ property.towerName }} </td>
-            </tr>
-
-            <tr class="card-data-tile">
-                <td class="card-data-title"><img class="icon" src="{% static 'project/icons/home.png'%}" />   Floor  </td>
-                <td class="colon">:</td>
-                <td class="card-data-value">  {{ property.floor }} </td>
-            </tr>
-
-            <tr class="card-data-tile">
-                <td class="card-data-title"><img class="icon" src="{% static 'project/icons/home.png'%}" />   Facing </td>
-                <td class="colon">:</td>
-                <td class="card-data-value">  {{ property.facing }} </td>
-            </tr>
-            
-                
-            </table>
-            <!-- </div> -->
-
-            <br>
-            <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">About Kokapet :</div>
-            <div class="card-data-sub-desc">
-                Mix Highrise Society: DSR SSC The Classe
-            </div>
-        </div>
-
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">Urban Villas :</div>
-            <div class="card-data-sub-desc">
-                Ace Casa Blanca, Babukhan Lakefront, Eden Garden, Goldfish Zresta,
-                Grand Boulevard, Jains Four Seasons, Legend Chimes, Lumbini
-                Brookville, Mypi Homes, Northstar Allura, Northstar Eden Garden,
-                Oorjita Istana Villas, Pavani Boulevard, Poulomi 90, Rajapushpa
-                Cannondale, Rajapushpa Open Skies, Sri Sai Mourya Magadha Village,
-                Villa Gooncha Hill
-            </div>
-        </div>
-
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">Ultrarise Society :</div>
-            <div class="card-data-sub-desc">My Home Tarkshya</div>
-        </div>
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">Highrise Society :</div>
-            <div class="card-data-sub-desc">
-                Amsri Cygne, ASBL Spire, Gem Nakshathra, Movie Towers, Poulomi
-                Aristos, Prestige Tranquil, PWS 7 Hills, Rajapushpa Regalia
-            </div>
-        </div>
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading"> Midrise Society :</div>
-            <div class="card-data-sub-desc">
-                Aryamitra Florina, BPR Pearl Celestial, Elemental Earthwoods,
-                Frontline Seven, Hirize Rich Park, Ncc Urban One, Peroneira The
-                Lawnz, Qualitas Serenity Park, Rajapushpa Atria, Rajapushpa The
-                Retreat, Sai Arvind Sanvelly Estates, Sai Arvind Sanvelly Gardens,
-                Serenity Park, Sunshine Ecopolis, Vertex Panache, Whilisting Woods,
-                Whistling Woods
-            </div>
-        </div>
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">Lowrise Society :</div>
-            <div class="card-data-sub-desc">
-                Green Blossoms, PVR Bhuvi, Sunshine S Ecopolis, The Lawnz
-            </div>
-        </div>
-
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">Ultrarise Office : </div>
-            <div class="card-data-sub-desc">
-            Agrim Sky Tower
-            </div>
-        </div>
-
-
-        <div class="card-data-sub-data-tile">
-        <div class="card-data-sub-heading">Highrise Office : </div>
-        <div class="card-data-sub-desc">
-        Rajapushpa West Avenue
-        </div>
-        </div>
-
-        <div class="card-data-sub-data-tile">
-            <div class="card-data-sub-heading">Midrise Office : </div>
-            <div class="card-data-sub-desc">
-            GAR Laxmi Infobahn, Grade A Kokapet, Hirize Kokapet, Kokapet One
-            </div>
-        </div>
-
-
-        
-        <div class="card-data-sub-data-tile">
-        <div class="card-data-sub-heading">
-                        Lowrise Retail : </div>
-        <div class="card-data-sub-desc">
-        Radha Kokapet Terminal, Raichandani 04 Star, Raichandani 05 Star, Raichandani Corner Star, Road No 12 Rohini, Smv-Edifice
-        </div>
-        </div>
-
-
-        <div class="card-data-sub-data-tile">
-        <div class="card-data-sub-heading">Schools : </div>
-        <div class="card-data-sub-desc">
-        Rockwell International
-        </div>
-    </div>
-
-    <div class="card-data-sub-data-tile">
-    <div class="card-data-sub-heading">Hospitals :
-    </div>
-    <div class="card-data-sub-desc">
-    Continental
-    </div>
-    </div>
-
-
-    <div class="card-data-sub-data-tile">
-        <div class="card-data-sub-heading">Neighboring Localities: </div>
-        <div class="card-data-sub-desc">
-        (West 1): Financial District, Gachibowli, Gandipet, Gopanpally, Gowlidoddi, Hitech City, Khajaguda, Kondapur, Kothaguda, Madhapur, Nanakramguda
-        
-        </div>
-        </div>
-
-
-        
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-</div>
-            
-    </div>
-</div>
-
-
-<div class="neu-card neu-card-right" data-aos="fade-right"  >
-    <spam class="neu-card-heading"> Reviews : </spam>
-
-    <div class="card-section-review">
-        <div class="card-review-tile">
-            <div class="card-review-data">4.5</div>
-            <div class="card-review-label">Ratings</div>
-        </div>
-        <div class="card-review-tile">
-            <div class="card-review-data">50+</div>
-            <div class="card-review-label">Reviews</div>
-        </div>
-    </div>
-</div>
-
-
-
-{% if property.projectName == 'DSR SSC The Classe' %}  
-           
-<div class="neu-card neu-card-left" data-aos="fade-right">
-    <spam class="neu-card-heading"> Map : </spam>
-    <br>
-    <div>
-        
-    </div>
-    <iframe id = "detail-page-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15230.158621238857!2d78.3346685!3d17.3858707!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf87a75ad67e119c6!2s%22THE%20CLASSE%22%20By%20DSR!5e0!3m2!1sen!2sin!4v1632608973512!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-{% endif %}
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-
-{% endblock content %}
+  </body>
+</html>

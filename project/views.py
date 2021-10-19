@@ -144,3 +144,13 @@ def search_address(request):
             payload.append(address_obj.developer)
 
     return JsonResponse({'status' : 200 , 'data' : payload})
+
+def developer_view(request):
+    projects = Project.objects.order_by('-developer').values_list('developer', flat=True).distinct() 
+    print("project : " ,projects)
+
+
+    return render(request, 'project/developer.html', {
+        'projects' : projects
+    })
+

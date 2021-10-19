@@ -26,3 +26,5 @@ datefinder
 google-auth-oauthlib
 google-api-python-client
 xhtml2pdf
+django-mathfilters
+git+https://github.com/narenchoudhary/django-indian-numbers#egg=django-indian-numbers

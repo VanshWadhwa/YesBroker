@@ -30,6 +30,7 @@
 <!-- animation -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<link rel="shortcut icon" href="{% static 'project/icons/favicon.ico' %}" type="image/x-icon">
 
     {% block head-block %}
     <!-- this is the head block for importing the further stuff -->
@@ -39,7 +40,7 @@
     <title>YesBroker!</title>
     {% endblock %}
 
-
+    
   </head>
   <body>
 
@@ -56,8 +57,8 @@
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top"> -->
 
       <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
-        <a class="navbar-brand" href="https://yesbroker.in/">
-    <img src="{% static 'project/images/logo.jpeg' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
+        <a class="navbar-brand" href="{% url 'home' %}">
+    <img src="{% static 'project/images/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
             YesBroker
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +71,7 @@
                     <a class="nav-link" href="{% url 'project-filters' %}">Properties<span class="sr-only">(current)</span></a>
                 </spam>
                 <spam class="nav-item">
-                    <a class="nav-link" href="{% url 'premium-services' %}">Developer</a>
+                    <a class="nav-link" href="{% url 'developers' %}">Developer</a>
                 </spam>
                 <spam class="nav-item">
                     <a class="nav-link" href="{% url 'premium-services' %}">Premium Services</a>
@@ -200,17 +201,42 @@
         <div class="footer-links-div">
           <spam class="footer-links-title">Quick Links</spam>
           <ul class="footer-link-list">
-            <li class="footer-links"> <a href="https://yesbroker.in/">Home</a></li>
+            <li class="footer-links"> <a href="{% url 'home' %}">Home</a></li>
             <li class="footer-links"> <a href="{% url 'project-filters' %}">Properties</a></li>
-            <li class="footer-links"> <a href="{% url 'premium-services' %}">Developers</a></li>
+            <li class="footer-links"> <a href="{% url 'developers' %}">Developers</a></li>
             <li class="footer-links"> <a href="{% url 'premium-services' %}">Premium Services</a></li>
+            {% if user.is_authenticated %}
+              <li class="footer-links">
+
+                <a  href="{% url 'favourite_list' %}">Favorites</a>
+              </li>
+
+            <!-- <spam class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </spam> -->
+            <li class="footer-links">
+
+              <a  href="{% url 'logout' %}">Logout</a>
+              </li>
+          {% else %}
+          <li class="footer-links">
+
+          <a  href="{% url 'login' %}">Login</a>
+</li>
+<li class="footer-links">
+
+          <a href="{% url 'register' %}">Register</a>
+
+          </li>
+          {% endif %}
+        
           </ul>
         </div>
     
         <div class="footer-website-data">
     
           <div class="footer-website-data-title">
-            <a href="https://www.yesbroker.in">YesBroker.in</a>
+            <a href="{% url 'home' %}">YesBroker.in</a>
     
           </div>
     
@@ -225,7 +251,15 @@
         <div class="footer-section section-two">
     
           © 2020 Copyright:
-          <a class="text-dark" href="https://YesBroker.in/">YesBroker.in</a>
+          <a class="text-dark" href="{% url 'home' %}">YesBroker.in</a>
+          <br>
+          <spam style="font-size: small;">
+
+            Made by Vansh Wadhwa
+            <!-- <a class="text-dark" href="https:///">Vansh Wadhwa</a> -->
+          </spam>
+
+
     
         </div>
     

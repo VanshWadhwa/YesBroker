@@ -95,3 +95,12 @@ a.article-title:hover {
 .help-block {
   font-size: smaller;
 }
+
+.help-block > strong {
+  color: red;98
+}
+
+.control-label{
+
+    font-weight: bolder;
+} 

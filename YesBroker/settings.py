@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z_#_-%*@(e@z4^8l^^n(0%-qc28$_erdk8m+_%3j0t)*620yq9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.146' ,'yesbroker.herokuapp.com' , '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.0.146', 'yesbroker.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'import_export',
+    'mathfilters',
+    'indian_numbers',
     'property.apps.PropertyConfig',
     'project.apps.ProjectConfig',
     'user.apps.UserConfig',

@@ -6,3 +6,4 @@
 - Horizontal Search Box
 - Lining the Pages
 - No need For search suggestions in Search Boxes
+- https://github.com/narenchoudhary/django-indian-numbers

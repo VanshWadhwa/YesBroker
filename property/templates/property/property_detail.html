@@ -1,6 +1,8 @@
 {% extends 'project/base.html' %}
 {% load crispy_forms_tags %}
+{% load mathfilters %}
 {% load static %}
+{% load indian_numbers_tags %}
 
 
 
@@ -85,7 +87,7 @@
 
     
         <spam class="main-section-location"><img class="icon" src="{% static 'project/icons/placeholder.png'%}" />{{ property.city }} , {{ property.location }}</spam>
-        <spam class="main-section-price">Price : ₹ 50 lakhs</spam>
+        <spam class="main-section-price">Price : ₹ {{ property.priceForSale|mul:property.sft|floatword_indian }}</spam>
         <spam class="main-section-price-label"> *Price Negotiable</spam>
 
         <table class="card-data-table">
