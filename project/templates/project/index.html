@@ -1,41 +1,794 @@
-{% extends 'project/base.html' %} {% load static %} {% block title %}
-<title>YesBroker!</title>
-{% endblock %} {% block head-block %}
-<!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'project/css/scrollPage.css' %}"
-/>
-<script src="{% static 'project/js/scrollPage.js' %}"></script>
-
-{% endblock head-block %}
-
+{% extends 'project/base.html' %} 
 <!--  -->
+{% load static %} 
+<!--  -->
+{% block title %}
+<title>YesBroker!</title>
+{% endblock %}
+<!--  -->
+{% block head-block %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8" />
+<meta name="keywords" content="YesBroker, Real Estate , 52, 72, 25, 100" />
+<meta name="description" content="" />
+<meta name="page_type" content="np-template-header-footer-from-plugin" />
+<title>YesBroker</title>
+<link rel="stylesheet" href="{% static 'project/css/nicepage.css' %}" media="screen" />
+<link rel="stylesheet" href="{% static 'project/css/Luxury-Real-Estate-1.css' %}" media="screen" />
 
+<link
+  id="u-theme-google-font"
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+/>
+<link
+  id="u-page-google-font"
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+/>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": ""
+  }
+</script>
+<meta name="theme-color" content="#d4ea15" />
+<meta property="og:title" content="YesBroker" />
+<meta property="og:type" content="website" />
+
+<style>
+
+.u-section-1 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("{% static 'project/images/pexelsphoto1732414.jpeg' %}");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 835px;
+}
+
+.u-section-1 .u-group-1 {
+  min-height: 482px;
+  margin-top: 151px;
+  margin-bottom: 60px;
+  height: auto;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 6rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.u-section-1 .u-btn-1 {
+  letter-spacing: 1px;
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 834px;
+  }
+
+  .u-section-1 .u-group-1 {
+    height: auto;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-top: 223px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 3.75rem;
+    margin-top: 303px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 741px;
+  }
+
+  .u-section-1 .u-group-1 {
+    min-height: 699px;
+    width: 340px;
+    margin: 42px -11px 0 auto;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 30px;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-top: 253px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: -8px;
+  }
+}.u-section-2 .u-sheet-1 {
+  min-height: 730px;
+}
+
+.u-section-2 .u-layout-wrap-1 {
+  pointer-events: auto;
+  margin: 70px 0;
+}
+
+.u-section-2 .u-image-1 {
+  min-height: 600px;
+  pointer-events: auto;
+  background-image: url("{% static 'project/images/g1d4dd00543724c16ea0d8625c7e132e6b97cfb840038b6847be7be23e67e50505603a49cf29c4194c16e0774814a1387df51b5f6ec931a042eac2e31f89a3135_1280.jpg' %}");
+  background-position: 50% 50%;
+}
+
+.u-section-2 .u-container-layout-1 {
+  padding: 30px 60px;
+}
+
+.u-section-2 .u-layout-cell-2 {
+  min-height: 600px;
+  pointer-events: auto;
+}
+
+.u-section-2 .u-container-layout-2 {
+  padding: 30px 60px;
+}
+
+.u-section-2 .u-text-1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 163px 0 0;
+}
+
+.u-section-2 .u-text-2 {
+  font-size: 2.25rem;
+  margin: 48px 0 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 100px;
+  }
+
+  .u-section-2 .u-layout-wrap-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 495px;
+  }
+
+  .u-section-2 .u-layout-cell-2 {
+    min-height: 495px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-2 .u-image-1 {
+    min-height: 379px;
+  }
+
+  .u-section-2 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .u-section-2 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+
+  .u-section-2 .u-container-layout-2 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 390px;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 569px;
+  }
+
+  .u-section-2 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-2 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 179px;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 358px;
+  }
+
+  .u-section-2 .u-layout-cell-2 {
+    min-height: 455px;
+  }
+
+  .u-section-2 .u-text-1 {
+    width: auto;
+    margin-top: 71px;
+  }
+
+  .u-section-2 .u-text-2 {
+    width: auto;
+    margin-top: 71px;
+  }
+}.u-section-3 {
+  background-image: none;
+}
+
+.u-section-3 .u-sheet-1 {
+  min-height: 838px;
+}
+
+.u-section-3 .u-text-1 {
+  font-size: 3.75rem;
+  margin: 134px auto 0;
+}
+
+.u-section-3 .u-layout-wrap-1 {
+  margin: 170px auto 60px 0;
+}
+
+.u-section-3 .u-layout-cell-1 {
+  min-height: 424px;
+}
+
+.u-section-3 .u-container-layout-1 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.u-section-3 .u-icon-1 {
+  height: 64px;
+  width: 64px;
+  margin: 29px auto 0;
+}
+
+.u-section-3 .u-text-2 {
+  font-size: 3rem;
+  margin: 30px auto 0;
+}
+
+.u-section-3 .u-text-3 {
+  margin: 20px auto 0;
+}
+
+.u-section-3 .u-layout-cell-2 {
+  background-image: none;
+  min-height: 424px;
+}
+
+.u-section-3 .u-container-layout-2 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.u-section-3 .u-icon-2 {
+  height: 64px;
+  width: 64px;
+  margin: 29px auto 0;
+}
+
+.u-section-3 .u-text-4 {
+  font-size: 3rem;
+  margin: 30px auto 0;
+}
+
+.u-section-3 .u-text-5 {
+  margin: 20px auto 0;
+}
+
+.u-section-3 .u-layout-cell-3 {
+  background-image: none;
+  min-height: 424px;
+}
+
+.u-section-3 .u-container-layout-3 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.u-section-3 .u-icon-3 {
+  height: 64px;
+  width: 64px;
+  margin: 40px auto 0;
+}
+
+.u-section-3 .u-text-6 {
+  font-size: 3rem;
+  margin: 30px auto 0;
+}
+
+.u-section-3 .u-text-7 {
+  margin: 15px auto 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 764px;
+  }
+
+  .u-section-3 .u-layout-wrap-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-3 .u-layout-cell-1 {
+    min-height: 350px;
+  }
+
+  .u-section-3 .u-container-layout-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .u-section-3 .u-icon-1 {
+    position: relative;
+  }
+
+  .u-section-3 .u-layout-cell-2 {
+    min-height: 350px;
+  }
+
+  .u-section-3 .u-container-layout-2 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .u-section-3 .u-icon-2 {
+    position: relative;
+  }
+
+  .u-section-3 .u-container-layout-3 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .u-section-3 .u-icon-3 {
+    position: relative;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 514px;
+  }
+
+  .u-section-3 .u-layout-cell-1 {
+    min-height: 100px;
+  }
+
+  .u-section-3 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-3 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+
+  .u-section-3 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-3 .u-layout-cell-3 {
+    min-height: 268px;
+  }
+
+  .u-section-3 .u-container-layout-3 {
+    padding-left: 10px;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 614px;
+  }
+
+  .u-section-3 .u-container-layout-1 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .u-section-3 .u-container-layout-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .u-section-3 .u-layout-cell-3 {
+    min-height: 603px;
+  }
+
+  .u-section-3 .u-container-layout-3 {
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-3 .u-sheet-1 {
+    min-height: 1466px;
+  }
+
+  .u-section-3 .u-text-1 {
+    width: auto;
+    margin-top: 140px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .u-section-3 .u-layout-wrap-1 {
+    margin-top: 265px;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-3 .u-layout-cell-1 {
+    min-height: 254px;
+  }
+
+  .u-section-3 .u-container-layout-1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .u-section-3 .u-layout-cell-2 {
+    min-height: 254px;
+  }
+
+  .u-section-3 .u-container-layout-2 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .u-section-3 .u-layout-cell-3 {
+    min-height: 380px;
+  }
+
+  .u-section-3 .u-container-layout-3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}.u-section-4 {
+  min-height: 100px;
+}
+
+.u-section-4 .u-sheet-1 {
+  min-height: 594px;
+}
+
+.u-section-4 .u-layout-wrap-1 {
+  margin: 0 auto 0 0;
+}
+
+.u-section-4 .u-layout-cell-1 {
+  min-height: 594px;
+}
+
+.u-section-4 .u-container-layout-1 {
+  padding: 30px 60px;
+}
+
+.u-section-4 .u-text-1 {
+  font-size: 2.25rem;
+  margin: 169px 0 0;
+}
+
+.u-section-4 .u-btn-1 {
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  margin: 20px auto 0;
+}
+
+.u-section-4 .u-layout-cell-2 {
+  min-height: 594px;
+}
+
+.u-section-4 .u-container-layout-2 {
+  padding: 30px 31px;
+}
+
+.u-section-4 .u-text-2 {
+  font-size: 2.25rem;
+  margin: 108px 29px 0;
+}
+
+.u-section-4 .u-btn-2 {
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  margin: 20px auto 0;
+}
+
+.u-section-4 .u-text-3 {
+  font-size: 1.25rem;
+  margin: 29px 29px 0;
+}
+
+.u-section-4 .u-btn-3 {
+  background-image: none;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  margin: 25px auto 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-4 .u-sheet-1 {
+    min-height: 100px;
+  }
+
+  .u-section-4 .u-layout-wrap-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-4 .u-layout-cell-1 {
+    min-height: 490px;
+  }
+
+  .u-section-4 .u-layout-cell-2 {
+    min-height: 490px;
+  }
+
+  .u-section-4 .u-text-2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-4 .u-text-3 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-4 .u-layout-cell-1 {
+    min-height: 100px;
+  }
+
+  .u-section-4 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .u-section-4 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+
+  .u-section-4 .u-container-layout-2 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-4 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-4 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-4 .u-layout-cell-1 {
+    min-height: 405px;
+  }
+
+  .u-section-4 .u-text-1 {
+    width: auto;
+    margin-top: 52px;
+  }
+
+  .u-section-4 .u-btn-1 {
+    margin-top: 52px;
+  }
+
+  .u-section-4 .u-layout-cell-2 {
+    min-height: 415px;
+  }
+
+  .u-section-4 .u-text-2 {
+    width: auto;
+    margin-top: 43px;
+  }
+
+  .u-section-4 .u-btn-2 {
+    margin-top: 57px;
+  }
+
+  .u-section-4 .u-text-3 {
+    width: auto;
+    margin-top: 30px;
+  }
+
+  .u-section-4 .u-btn-3 {
+    margin-top: 23px;
+  }
+}
+</style>
+<!--  -->
+{% endblock head-block %}
+<!--  -->
 {% block content %}
 <!-- Content of the property detail page -->
 
 <body>
-  <div class="container">
-    <div id="card_1" class="card transition minimize">
-      <h2>Card 1</h2>
+  <section class="u-clearfix u-image u-shading u-section-1" id="sec-8868">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-group u-group-1">
+        <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
+          <h1 class="u-align-center-xs u-custom-font u-font-playfair-display u-text u-title u-text-1">YesBroker<br>
+            <br>
+          </h1>
+          <a href="{% url 'project-filters' %}" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Browse Projects &gt;&gt;</a>
+        </div>
+      </div>
     </div>
-    <div id="card_2" class="card transition minimize">
-      <h2>Card 2</h2>
+  </section>
+  <section class="u-clearfix u-section-2" id="sec-d0f9">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1280" data-image-height="664">
+              <div class="u-container-layout u-valign-middle u-container-layout-1" src=""></div>
+            </div>
+            <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-white u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <p class="u-align-center u-text u-text-1">One Stop for all your Real Estate needs</p>
+                <h2 class="u-align-center u-text u-text-2">
+                  <span style="font-size: 1.875rem;">Fast and Reliable, Our service for you</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="card_3" class="card transition minimize">
-      <h2>Card 3</h2>
+  </section>
+  <section class="u-black u-clearfix u-section-3" id="sec-f9c8">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-align-center-xs u-text u-text-default u-text-1">We Make A Difference</h2>
+      <div class="u-clearfix u-expanded-width u-gutter-20 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-container-style u-layout-cell u-left-cell u-size-20 u-layout-cell-1">
+              <div class="u-container-layout u-container-layout-1"><span class="u-align-center u-icon u-icon-circle u-text-palette-1-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.004 512.004" style=""><use xlink:href="#svg-092f"></use></svg><svg version="1.1" id="svg-092f" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.004 512.004" style="enable-background:new 0 0 512.004 512.004;" xml:space="preserve" class="u-svg-content"><g><g><g><path d="M315.735,119.47c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533h-17.067c-4.719,0-8.533,3.823-8.533,8.533     s3.814,8.533,8.533,8.533H315.735z"></path><path d="M187.735,213.337v51.2c0,4.71,3.823,8.533,8.533,8.533h119.467c4.719,0,8.533-3.823,8.533-8.533v-51.2     c0-37.641-30.626-68.267-68.267-68.267C218.362,145.07,187.735,175.696,187.735,213.337z M247.469,256.003h-42.667V221.87h42.667     V256.003z M247.469,204.803H205.57c3.618-21.393,20.506-38.281,41.899-41.899V204.803z M264.535,162.905     c21.393,3.618,38.281,20.506,41.899,41.899h-41.899V162.905z M264.535,221.87h42.667v34.133h-42.667V221.87z"></path><path d="M452.269,494.937h-358.4c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h358.4     c4.719,0,8.533-3.823,8.533-8.533S456.988,494.937,452.269,494.937z"></path><path d="M76.802,85.337h8.533v42.667c0,4.71,3.823,8.533,8.533,8.533c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533h-8.533V51.203h51.2V68.27h-8.533c-4.71,0-8.533,3.823-8.533,8.533V93.87     c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533v-8.533h8.533c4.71,0,8.533-3.823,8.533-8.533V42.67     c0-4.71-3.823-8.533-8.533-8.533H76.802c-4.71,0-8.533,3.823-8.533,8.533v34.133C68.269,81.514,72.092,85.337,76.802,85.337z"></path><path d="M93.869,477.87h17.067c4.71,0,8.533-3.823,8.533-8.533c0-4.71-3.823-8.533-8.533-8.533H93.869     c-4.71,0-8.533,3.823-8.533,8.533C85.335,474.047,89.158,477.87,93.869,477.87z"></path><path d="M179.202,153.603h-17.067c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h17.067     c4.71,0,8.533-3.823,8.533-8.533C187.735,157.426,183.913,153.603,179.202,153.603z"></path><path d="M59.735,494.937h-51.2c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h51.2c4.71,0,8.533-3.823,8.533-8.533     S64.446,494.937,59.735,494.937z"></path><path d="M349.869,426.67h51.2c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533h-51.2c-4.719,0-8.533,3.823-8.533,8.533     S345.15,426.67,349.869,426.67z"></path><path d="M418.135,375.47c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533h-17.067c-4.719,0-8.533,3.823-8.533,8.533     s3.814,8.533,8.533,8.533H418.135z"></path><path d="M170.669,418.137c0-4.71-3.823-8.533-8.533-8.533h-17.067c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533     h17.067C166.846,426.67,170.669,422.847,170.669,418.137z"></path><path d="M102.402,213.337c0,4.71,3.823,8.533,8.533,8.533h51.2c4.71,0,8.533-3.823,8.533-8.533c0-4.71-3.823-8.533-8.533-8.533     h-51.2C106.225,204.803,102.402,208.626,102.402,213.337z"></path><path d="M503.469,494.937h-17.067c-4.719,0-8.533,3.823-8.533,8.533s3.814,8.533,8.533,8.533h17.067     c4.719,0,8.533-3.823,8.533-8.533S508.188,494.937,503.469,494.937z"></path><path d="M503.469,264.537c2.185,0,4.369-0.836,6.033-2.5c3.337-3.337,3.337-8.73,0-12.066l-51.191-51.191     c-0.009-0.009-0.009-0.009-0.017-0.009l-42.65-42.658l-0.017-0.017L262.035,2.503c-3.337-3.336-8.73-3.336-12.066,0     l-102.4,102.391v0.009L2.502,249.97c-3.336,3.337-3.336,8.73,0,12.066c3.337,3.337,8.73,3.337,12.066,0l36.634-36.634v243.934     c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533V426.67h42.667c4.71,0,8.533-3.823,8.533-8.533     s-3.823-8.533-8.533-8.533H68.269V324.27h8.533c4.71,0,8.533-3.823,8.533-8.533s-3.823-8.533-8.533-8.533h-8.533V273.07h76.8     c4.71,0,8.533-3.823,8.533-8.533s-3.823-8.533-8.533-8.533h-76.8v-47.667l88.866-88.866h56.201c4.71,0,8.533-3.823,8.533-8.533     s-3.823-8.533-8.533-8.533h-39.134l81.801-81.801l133.001,133h-22.067c-4.719,0-8.533,3.823-8.533,8.533     c0,4.71,3.814,8.533,8.533,8.533h39.134l34.133,34.133h-39.134c-4.719,0-8.533,3.823-8.533,8.533c0,4.71,3.814,8.533,8.533,8.533     h42.667v34.133h-8.533c-4.719,0-8.533,3.823-8.533,8.533s3.814,8.533,8.533,8.533h8.533v34.133h-42.667     c-4.719,0-8.533,3.823-8.533,8.533s3.814,8.533,8.533,8.533h42.667v85.333h-8.533c-4.719,0-8.533,3.823-8.533,8.533     s3.814,8.533,8.533,8.533h8.533v34.133h-59.733c-4.719,0-8.533,3.823-8.533,8.533c0,4.71,3.814,8.533,8.533,8.533h68.267     c4.719,0,8.533-3.823,8.533-8.533V225.403l36.634,36.634C499.1,263.7,501.284,264.537,503.469,264.537z"></path><path d="M128.002,375.47h59.733v85.333h-25.6c-4.71,0-8.533,3.823-8.533,8.533c0,4.71,3.823,8.533,8.533,8.533h34.133     c4.71,0,8.533-3.823,8.533-8.533V324.27h102.4v68.267h-8.533c-4.719,0-8.533,3.823-8.533,8.533c0,4.71,3.814,8.533,8.533,8.533     h8.533v59.733c0,4.71,3.814,8.533,8.533,8.533s8.533-3.823,8.533-8.533V375.47h8.533c4.719,0,8.533-3.823,8.533-8.533     s-3.814-8.533-8.533-8.533h-8.533v-42.667c0-4.71-3.814-8.533-8.533-8.533H196.269c-4.71,0-8.533,3.823-8.533,8.533v42.667     h-59.733c-4.71,0-8.533,3.823-8.533,8.533S123.292,375.47,128.002,375.47z"></path><path d="M119.469,315.737c0,4.71,3.823,8.533,8.533,8.533h34.133c4.71,0,8.533-3.823,8.533-8.533s-3.823-8.533-8.533-8.533     h-34.133C123.292,307.203,119.469,311.026,119.469,315.737z"></path><path d="M349.869,324.27h17.067c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533h-17.067     c-4.719,0-8.533,3.823-8.533,8.533S345.15,324.27,349.869,324.27z"></path><path d="M358.402,264.537c0,4.71,3.814,8.533,8.533,8.533h34.133c4.719,0,8.533-3.823,8.533-8.533s-3.814-8.533-8.533-8.533     h-34.133C362.217,256.003,358.402,259.826,358.402,264.537z"></path><path d="M366.935,204.803h-17.067c-4.719,0-8.533,3.823-8.533,8.533c0,4.71,3.814,8.533,8.533,8.533h17.067     c4.719,0,8.533-3.823,8.533-8.533C375.469,208.626,371.654,204.803,366.935,204.803z"></path>
+</g>
+</g>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></span>
+                <h1 class="u-text u-text-default u-text-2">30+ M</h1>
+                <h1 class="u-text u-text-default u-text-3">
+                  <span style="font-size: 1.875rem;"> Happy Users</span>
+                  <br>
+                </h1>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2"><span class="u-align-center u-icon u-icon-circle u-text-palette-1-base u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xlink:href="#svg-5874"></use></svg><svg version="1.1" id="svg-5874" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="u-svg-content"><g><g><g><path d="M366.933,477.867H128c-4.71,0-8.533,3.823-8.533,8.533v17.067c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533     v-8.533h230.4c4.71,0,8.533-3.823,8.533-8.533S371.644,477.867,366.933,477.867z"></path><path d="M187.733,213.333c0,4.71,3.823,8.533,8.533,8.533H230.4c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533h-34.133c-4.71,0-8.533,3.823-8.533,8.533V213.333z M204.8,170.667h17.067V204.8H204.8V170.667z"></path><path d="M110.933,102.4H8.533c-4.71,0-8.533,3.823-8.533,8.533V281.6c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533     V119.467h93.867c4.71,0,8.533-3.823,8.533-8.533S115.644,102.4,110.933,102.4z"></path><path d="M409.6,418.133c0,4.71,3.823,8.533,8.533,8.533h34.133c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533h-34.133c-4.71,0-8.533,3.823-8.533,8.533V418.133z M426.667,375.467h17.067V409.6h-17.067     V375.467z"></path><path d="M42.667,307.2C0.486,307.2,0,417.024,0,418.133c0,20.608,14.686,37.837,34.133,41.805v43.529     c0,4.71,3.823,8.533,8.533,8.533c4.71,0,8.533-3.823,8.533-8.533v-43.529c19.447-3.968,34.133-21.197,34.133-41.805     C85.333,417.024,84.847,307.2,42.667,307.2z M42.667,443.733c-14.114,0-25.6-11.486-25.6-25.6     c0-42.513,11.418-93.867,25.6-93.867c14.182,0,25.6,51.354,25.6,93.867C68.267,432.247,56.781,443.733,42.667,443.733z"></path><path d="M93.867,256H59.733c-4.71,0-8.533,3.823-8.533,8.533V281.6c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533     v-8.533h17.067v42.667c0,4.71,3.823,8.533,8.533,8.533c4.71,0,8.533-3.823,8.533-8.533v-51.2     C102.4,259.823,98.577,256,93.867,256z"></path><path d="M418.133,221.867h34.133c4.71,0,8.533-3.823,8.533-8.533v-51.2c0-4.71-3.823-8.533-8.533-8.533h-34.133     c-4.71,0-8.533,3.823-8.533,8.533v51.2C409.6,218.044,413.423,221.867,418.133,221.867z M426.667,170.667h17.067V204.8h-17.067     V170.667z"></path><path d="M93.867,153.6H59.733c-4.71,0-8.533,3.823-8.533,8.533v51.2c0,4.71,3.823,8.533,8.533,8.533h34.133     c4.71,0,8.533-3.823,8.533-8.533v-51.2C102.4,157.423,98.577,153.6,93.867,153.6z M85.333,204.8H68.267v-34.133h17.067V204.8z"></path><path d="M273.067,213.333c0,4.71,3.823,8.533,8.533,8.533h34.133c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533H281.6c-4.71,0-8.533,3.823-8.533,8.533V213.333z M290.133,170.667H307.2V204.8h-17.067V170.667z     "></path><path d="M503.467,102.4h-102.4c-4.71,0-8.533,3.823-8.533,8.533s3.823,8.533,8.533,8.533h93.867V462.37     c-2.679-0.956-5.521-1.57-8.533-1.57c-1.476,0-2.944,0.128-4.386,0.384c-5.888-10.607-17.092-17.451-29.747-17.451     c-12.655,0-23.859,6.844-29.747,17.451c-1.442-0.256-2.91-0.384-4.386-0.384c-14.114,0-25.6,11.486-25.6,25.6     s11.486,25.6,25.6,25.6H486.4c14.114,0,25.6-11.486,25.6-25.6V110.933C512,106.223,508.177,102.4,503.467,102.4z M486.4,494.933     h-68.267c-4.702,0-8.533-3.831-8.533-8.533s3.831-8.533,8.533-8.533c1.638,0,3.191,0.469,4.625,1.391     c2.338,1.502,5.257,1.775,7.834,0.734c2.577-1.041,4.48-3.277,5.103-5.982c1.801-7.774,8.619-13.21,16.572-13.21     c7.953,0,14.771,5.436,16.572,13.21c0.623,2.705,2.526,4.941,5.103,5.982c2.569,1.041,5.495,0.768,7.834-0.734     c5.555-3.584,13.158,0.802,13.158,7.142C494.933,491.102,491.102,494.933,486.4,494.933z"></path><path d="M281.6,119.467h34.133c4.71,0,8.533-3.823,8.533-8.533v-51.2c0-4.71-3.823-8.533-8.533-8.533H281.6     c-4.71,0-8.533,3.823-8.533,8.533v51.2C273.067,115.644,276.89,119.467,281.6,119.467z M290.133,68.267H307.2V102.4h-17.067     V68.267z"></path><path d="M273.067,315.733c0,4.71,3.823,8.533,8.533,8.533h34.133c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533H281.6c-4.71,0-8.533,3.823-8.533,8.533V315.733z M290.133,273.067H307.2V307.2h-17.067V273.067z     "></path><path d="M196.267,119.467H230.4c4.71,0,8.533-3.823,8.533-8.533v-51.2c0-4.71-3.823-8.533-8.533-8.533h-34.133     c-4.71,0-8.533,3.823-8.533,8.533v51.2C187.733,115.644,191.556,119.467,196.267,119.467z M204.8,68.267h17.067V102.4H204.8     V68.267z"></path><path d="M249.941,412.075c-1.536,1.621-2.475,3.84-2.475,6.059c0,2.219,0.939,4.437,2.475,6.059     c1.621,1.536,3.84,2.475,6.059,2.475c2.219,0,4.437-0.939,6.059-2.475c1.536-1.621,2.475-3.84,2.475-6.059     c0-2.219-0.939-4.437-2.475-6.059C258.816,408.917,253.184,408.917,249.941,412.075z"></path><path d="M187.733,315.733c0,4.71,3.823,8.533,8.533,8.533H230.4c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533h-34.133c-4.71,0-8.533,3.823-8.533,8.533V315.733z M204.8,273.067h17.067V307.2H204.8V273.067z"></path><path d="M170.667,366.933c0,4.71,3.823,8.533,8.533,8.533h25.6v76.8c0,4.71,3.823,8.533,8.533,8.533     c4.71,0,8.533-3.823,8.533-8.533v-76.8h68.267v76.8c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533v-76.8h25.6     c4.71,0,8.533-3.823,8.533-8.533s-3.823-8.533-8.533-8.533H179.2C174.49,358.4,170.667,362.223,170.667,366.933z"></path><path d="M409.6,315.733c0,4.71,3.823,8.533,8.533,8.533h34.133c4.71,0,8.533-3.823,8.533-8.533v-51.2     c0-4.71-3.823-8.533-8.533-8.533h-34.133c-4.71,0-8.533,3.823-8.533,8.533V315.733z M426.667,273.067h17.067V307.2h-17.067     V273.067z"></path><path d="M366.933,0H145.067c-4.71,0-8.533,3.823-8.533,8.533v443.733c0,4.71,3.823,8.533,8.533,8.533     c4.71,0,8.533-3.823,8.533-8.533v-435.2h204.8v435.2c0,4.71,3.823,8.533,8.533,8.533s8.533-3.823,8.533-8.533V8.533     C375.467,3.823,371.644,0,366.933,0z"></path>
+</g>
+</g>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg></span>
+                <h1 class="u-text u-text-default u-text-4">200+ K</h1>
+                <h1 class="u-text u-text-default u-text-5">
+                  <span style="font-size: 30px;">Verified Experts</span>
+                  <br>
+                </h1>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-right-cell u-size-20 u-layout-cell-3">
+              <div class="u-container-layout u-container-layout-3"><span class="u-align-center u-icon u-icon-circle u-text-palette-1-base u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="-20 -20 661.33331 661.33331" style=""><use xlink:href="#svg-a131"></use></svg><svg viewBox="-20 -20 661.33331 661.33331" xmlns="http://www.w3.org/2000/svg" id="svg-a131" class="u-svg-content"><path d="m230 520h160c5.523438 0 10-4.476562 10-10v-160c0-5.527344-4.476562-10-10-10h-160c-5.523438 0-10 4.472656-10 10v160c0 5.523438 4.476562 10 10 10zm10-160h140v140h-140zm0 0"></path><path d="m230 270h160c5.523438 0 10-4.476562 10-10v-90c0-5.527344-4.476562-10-10-10h-160c-5.523438 0-10 4.472656-10 10v90c0 5.523438 4.476562 10 10 10zm70-20h-20v-70h20zm20-70h20v70h-20zm60 70h-20v-70h20zm-140-70h20v70h-20zm0 0"></path><path d="m352.46875 383.417969-63 72.003906-22.4375-22.445313c-3.925781-3.789062-10.160156-3.734374-14.019531.125-3.855469 3.855469-3.910157 10.09375-.121094 14.015626l30 30c1.894531 1.867187 4.453125 2.902343 7.109375 2.882812h.332031c2.769531-.09375 5.375-1.328125 7.199219-3.414062l70-80c3.597656-4.160157 3.15625-10.449219-.984375-14.070313-4.144531-3.617187-10.433594-3.214844-14.078125.914063zm0 0"></path><path d="m610 600h-80v-280h80c4.042969-.003906 7.691406-2.441406 9.238281-6.175781 1.546875-3.738281.6875-8.039063-2.167969-10.894531l-300-300c-3.90625-3.90625-10.234374-3.90625-14.140624 0l-300 300c-2.8554692 2.855468-3.714844 7.15625-2.167969 10.894531 1.546875 3.734375 5.195312 6.171875 9.238281 6.175781h80v280h-80c-5.523438 0-10 4.472656-10 10 0 5.523438 4.476562 10 10 10h600c5.523438 0 10-4.476562 10-10 0-5.527344-4.476562-10-10-10zm-510-300h-65.859375l275.859375-275.863281 275.859375 275.863281h-65.859375c-5.523438 0-10 4.472656-10 10v290h-400v-290c0-5.527344-4.476562-10-10-10zm0 0"></path></svg></span>
+                <h1 class="u-text u-text-default u-text-6">2000+&nbsp;</h1>
+                <h1 class="u-text u-text-default u-text-7">
+                  <span style="font-size: 30px;">Properties</span>
+                  <br>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="card_4" class="card transition minimize">
-      <h2>Card 4</h2>
+  </section>
+  <section class="u-clearfix u-section-4" id="sec-122f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout" style="">
+          <div class="u-layout-row" style="">
+            <div class="u-align-center u-black u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-layout-cell-1" src="">
+              <div class="u-container-layout u-container-layout-1">
+                <p class="u-text u-text-1">Browse Our Projects</p>
+                <a href="{% url 'project-filters' %}" class="u-btn u-button-style u-palette-1-base u-btn-1">Lets Browse</a>
+              </div>
+            </div>
+            <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-white u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <p class="u-align-center u-text u-text-2">Create an Account</p>
+                <a href="{% url 'register' %}" class="u-btn u-button-style u-palette-1-base u-btn-2">Sign up</a>
+                <p class="u-align-center u-text u-text-3">Or</p>
+                <a href="{% url 'login' %}" class="u-btn u-button-style u-palette-1-base u-btn-3">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="card_5" class="card transition minimize">
-      <h2>Card 5</h2>
-    </div>
-    <div id="card_6" class="card transition minimize"></div>
-    <!-- end .container -->
-  </div>
+  </section>
+  
+  
+  
+
+</body>
+
+
 </body>
 
 {% endblock content %}

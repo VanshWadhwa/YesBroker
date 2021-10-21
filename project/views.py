@@ -105,9 +105,9 @@ def home_page(request):
     #     "projects" : projects,
     # }
 
-    return render(request, 'project/index3.html', {})
+    # return render(request, 'project/index3.html', {})
     # return render(request, 'project/home.html', {})
-    # return render(request, 'project/index.html', context=context)
+    return render(request, 'project/index.html', {})
 
 def premium_services(request):
 
