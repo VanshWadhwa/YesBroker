@@ -1,1 +1,1 @@
-web: gunicorn YesBroker.wsgi 
+web: gunicorn YesBroker.wsgi --timeout 120
